@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | InkVerse</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="admin-dashboard-page">
+
+    <!-- Sidebar -->
+
+    <aside class="admin-sidebar">
+
+        <a href="index.html" class="admin-dashboard-logo">
+            Ink<span>Verse</span>
+        </a>
+
+        <nav class="admin-sidebar-nav">
+
+            <a href="#" class="active">
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard
+            </a>
+
+           <a href="admin-articles.html">
+    <i class="fa-regular fa-pen-to-square"></i>
+    Articles
+</a>
+
+            <a href="#">
+                <i class="fa-regular fa-folder"></i>
+                Categories
+            </a>
+
+            <a href="#">
+                <i class="fa-regular fa-comments"></i>
+                Comments
+            </a>
+
+        </nav>
+
+        <div class="admin-sidebar-bottom">
+
+            <a href="index.html">
+                <i class="fa-solid fa-arrow-left"></i>
+                Back to Blog
+            </a>
+
+            <button id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- Main Dashboard -->
+
+    <main class="admin-dashboard-main">
+
+        <header class="admin-dashboard-header">
+
+            <div>
+                <span class="admin-small-label">
+                    INKVERSE ADMIN
+                </span>
+
+                <h1>Dashboard</h1>
+
+                <p>
+                    Welcome back, Admin. Here's what's happening with your blog.
+                </p>
+            </div>
+
+            <div class="admin-user">
+
+                <div class="admin-user-avatar">
+                    A
+                </div>
+
+                <div>
+                    <strong>Admin</strong>
+                    <span>Administrator</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Stats -->
+
+        <section class="admin-stats">
+
+            <div class="admin-stat-card">
+
+                <div class="admin-stat-icon">
+                    <i class="fa-regular fa-newspaper"></i>
+                </div>
+
+                <div>
+                    <span>Total Articles</span>
+                    <strong>6</strong>
+                </div>
+
+            </div>
+
+
+            <div class="admin-stat-card">
+
+                <div class="admin-stat-icon">
+                    <i class="fa-regular fa-folder-open"></i>
+                </div>
+
+                <div>
+                    <span>Categories</span>
+                    <strong>8</strong>
+                </div>
+
+            </div>
+
+
+            <div class="admin-stat-card">
+
+                <div class="admin-stat-icon">
+                    <i class="fa-regular fa-comments"></i>
+                </div>
+
+                <div>
+                    <span>Comments</span>
+                    <strong id="commentCount">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="admin-stat-card">
+
+                <div class="admin-stat-icon">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+
+                <div>
+                    <span>Page Status</span>
+                    <strong>Live</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Quick Actions -->
+
+        <section class="admin-section">
+
+            <div class="admin-section-heading">
+
+                <div>
+                    <span>MANAGEMENT</span>
+                    <h2>Quick Actions</h2>
+                </div>
+
+            </div>
+
+
+            <div class="admin-action-grid">
+
+                <button class="admin-action-card">
+
+                    <div class="admin-action-icon">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+
+                    <div>
+                        <h3>Add New Article</h3>
+                        <p>Create and publish a new blog post.</p>
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right admin-action-arrow"></i>
+
+                </button>
+
+
+                <button class="admin-action-card">
+
+                    <div class="admin-action-icon">
+                        <i class="fa-regular fa-pen-to-square"></i>
+                    </div>
+
+                    <div>
+                        <h3>Manage Articles</h3>
+                        <p>Edit or remove existing articles.</p>
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right admin-action-arrow"></i>
+
+                </button>
+
+
+                <button class="admin-action-card">
+
+                    <div class="admin-action-icon">
+                        <i class="fa-regular fa-comments"></i>
+                    </div>
+
+                    <div>
+                        <h3>Manage Comments</h3>
+                        <p>Review and manage reader comments.</p>
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right admin-action-arrow"></i>
+
+                </button>
+
+
+                <button class="admin-action-card">
+
+                    <div class="admin-action-icon">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+
+                    <div>
+                        <h3>View Website</h3>
+                        <p>Open the public InkVerse website.</p>
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right admin-action-arrow"></i>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Recent Articles -->
+
+        <section class="admin-section">
+
+            <div class="admin-section-heading">
+
+                <div>
+                    <span>CONTENT</span>
+                    <h2>Recent Articles</h2>
+                </div>
+
+                <a href="#" class="admin-view-all">
+                    View All
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <div class="admin-table-wrapper">
+
+                <table class="admin-table">
+
+                    <thead>
+                        <tr>
+                            <th>Article</th>
+                            <th>Category</th>
+                            <th>Status</th>
+                            <th>Read Time</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>
+                                <strong>
+                                    The Future of Technology: What Comes Next?
+                                </strong>
+                            </td>
+
+                            <td>Technology</td>
+
+                            <td>
+                                <span class="status-badge published">
+                                    Published
+                                </span>
+                            </td>
+
+                            <td>5 min</td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <strong>
+                                    Designing Digital Experiences People Love
+                                </strong>
+                            </td>
+
+                            <td>Design</td>
+
+                            <td>
+                                <span class="status-badge published">
+                                    Published
+                                </span>
+                            </td>
+
+                            <td>4 min</td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <strong>
+                                    Building a Life That Feels Like Yours
+                                </strong>
+                            </td>
+
+                            <td>Lifestyle</td>
+
+                            <td>
+                                <span class="status-badge published">
+                                    Published
+                                </span>
+                            </td>
+
+                            <td>6 min</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="admin-dashboard.js"></script>
+
+</body>
+
+</html>

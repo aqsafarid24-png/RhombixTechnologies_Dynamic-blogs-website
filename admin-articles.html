@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Articles | InkVerse</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="admin-dashboard-page">
+
+    <!-- Sidebar -->
+
+    <aside class="admin-sidebar">
+
+        <a href="index.html" class="admin-dashboard-logo">
+            Ink<span>Verse</span>
+        </a>
+
+        <nav class="admin-sidebar-nav">
+
+            <a href="admin-dashboard.html">
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard
+            </a>
+
+            <a href="admin-articles.html" class="active">
+                <i class="fa-regular fa-pen-to-square"></i>
+                Articles
+            </a>
+
+            <a href="#">
+                <i class="fa-regular fa-folder"></i>
+                Categories
+            </a>
+
+            <a href="#">
+                <i class="fa-regular fa-comments"></i>
+                Comments
+            </a>
+
+        </nav>
+
+        <div class="admin-sidebar-bottom">
+
+            <a href="index.html">
+                <i class="fa-solid fa-arrow-left"></i>
+                Back to Blog
+            </a>
+
+            <button id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- Main -->
+
+    <main class="admin-dashboard-main">
+
+        <header class="admin-dashboard-header">
+
+            <div>
+
+                <span class="admin-small-label">
+                    CONTENT MANAGEMENT
+                </span>
+
+                <h1>Manage Articles</h1>
+
+                <p>
+                    Create and manage your InkVerse articles.
+                </p>
+
+            </div>
+
+            <div class="admin-user">
+
+                <div class="admin-user-avatar">
+                    A
+                </div>
+
+                <div>
+                    <strong>Admin</strong>
+                    <span>Administrator</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Add Article -->
+
+        <section class="admin-article-editor">
+
+            <div class="admin-section-heading">
+
+                <div>
+                    <span>CREATE CONTENT</span>
+                    <h2>Add New Article</h2>
+                </div>
+
+            </div>
+
+
+            <form id="articleForm">
+<input type="hidden" id="editingArticleId" value="">
+
+                <!-- Title -->
+
+                <div class="admin-editor-group">
+
+                    <label for="articleTitle">
+                        Article Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="articleTitle"
+                        placeholder="Enter article title"
+                    >
+
+                </div>
+
+
+                <!-- Category + Read Time -->
+
+                <div class="admin-editor-row">
+
+                    <div class="admin-editor-group">
+
+                        <label for="articleCategory">
+                            Category
+                        </label>
+
+                        <select id="articleCategory">
+
+                            <option value="">
+                                Select Category
+                            </option>
+
+                            <option value="Technology">
+                                Technology
+                            </option>
+
+                            <option value="Design">
+                                Design
+                            </option>
+
+                            <option value="Lifestyle">
+                                Lifestyle
+                            </option>
+
+                            <option value="Productivity">
+                                Productivity
+                            </option>
+
+                            <option value="Career">
+                                Career
+                            </option>
+
+                            <option value="AI & Innovation">
+                                AI & Innovation
+                            </option>
+
+                            <option value="Education">
+                                Education
+                            </option>
+
+                            <option value="Creativity">
+                                Creativity
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="admin-editor-group">
+
+                        <label for="articleReadTime">
+                            Read Time
+                        </label>
+
+                        <input
+                            type="text"
+                            id="articleReadTime"
+                            placeholder="e.g. 5 min read"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Intro -->
+
+                <div class="admin-editor-group">
+
+                    <label for="articleIntro">
+                        Article Introduction
+                    </label>
+
+                    <textarea
+                        id="articleIntro"
+                        rows="4"
+                        placeholder="Write a short introduction..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Content -->
+
+                <div class="admin-editor-group">
+
+                    <label for="articleContent">
+                        Article Content
+                    </label>
+
+                    <textarea
+                        id="articleContent"
+                        rows="12"
+                        placeholder="Write your article content here..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Image -->
+
+                <div class="admin-editor-group">
+
+                    <label for="articleImage">
+                        Article Image
+                    </label>
+
+                    <input
+                        type="file"
+                        id="articleImage"
+                        accept="image/*"
+                    >
+
+                    <small class="admin-file-help">
+                        Select JPG, JPEG or PNG image.
+                    </small>
+
+                </div>
+
+
+                <!-- Message -->
+
+                <p
+                    id="articleMessage"
+                    class="article-form-message"
+                ></p>
+
+
+                <!-- Buttons -->
+
+                <div class="admin-editor-actions">
+
+    <a 
+        href="admin-dashboard.html" 
+        class="admin-cancel-btn" 
+    > 
+        Cancel 
+    </a>
+
+    <button
+        type="button"
+        id="cancelEditBtn"
+        class="admin-cancel-edit-btn"
+        style="display: none;"
+    >
+        <i class="fa-solid fa-xmark"></i>
+        Cancel Edit
+    </button>
+
+    <button 
+        type="submit" 
+        class="admin-save-btn"
+        id="articleSubmitBtn"
+    > 
+        <i class="fa-solid fa-plus"></i> 
+        Add Article 
+    </button> 
+
+</div>
+            </form>
+            <!-- Saved Articles -->
+
+            <section class="admin-saved-articles">
+
+                <div class="admin-section-heading">
+
+                    <div>
+                        <span>SAVED CONTENT</span>
+                        <h2>All Articles</h2>
+                    </div>
+
+                    <span
+                        id="articleTotal"
+                        class="article-total"
+                    >
+                        0 Articles
+                    </span>
+
+                </div>
+
+                <div
+                    id="savedArticlesList"
+                    class="saved-articles-list"
+                ></div>
+
+            </section>
+        </section>
+
+    </main>
+
+
+    <script src="admin-articles.js"></script>
+
+</body>
+
+</html>

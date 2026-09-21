@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Login | InkVerse</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="admin-page">
+
+    <main class="admin-login-page">
+
+        <div class="admin-login-card">
+
+            <a href="index.html" class="admin-logo">
+                Ink<span>Verse</span>
+            </a>
+
+            <div class="admin-login-heading">
+
+                <span>ADMIN AREA</span>
+
+                <h1>Welcome Back</h1>
+
+                <p>
+                    Sign in to manage your InkVerse blog.
+                </p>
+
+            </div>
+
+
+            <form id="adminLoginForm" class="admin-login-form">
+
+                <div class="admin-form-group">
+
+                    <label for="adminUsername">
+                        Username
+                    </label>
+
+                    <div class="admin-input-box">
+
+                        <i class="fa-regular fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="adminUsername"
+                            placeholder="Enter username"
+                            autocomplete="username"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-form-group">
+
+                    <label for="adminPassword">
+                        Password
+                    </label>
+
+                    <div class="admin-input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="adminPassword"
+                            placeholder="Enter password"
+                            autocomplete="current-password"
+                        >
+
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="password-toggle"
+                            aria-label="Show password"
+                        >
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <p
+                    id="loginMessage"
+                    class="login-message"
+                ></p>
+
+
+                <button
+                    type="submit"
+                    class="admin-login-btn"
+                >
+                    Sign In
+
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </form>
+
+
+            <a href="index.html" class="back-to-blog">
+                <i class="fa-solid fa-arrow-left"></i>
+                Back to InkVerse
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <script src="admin.js"></script>
+
+</body>
+
+</html>

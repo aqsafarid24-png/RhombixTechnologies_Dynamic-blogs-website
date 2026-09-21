@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Article | InkVerse</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="latest-header">
+
+        <div class="latest-navbar">
+
+          
+
+          
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= ARTICLE ================= -->
+
+    <main class="latest-single-article">
+
+        <article id="articleContainer">
+
+            <!-- JavaScript will show the selected article here -->
+
+        </article>
+
+    </main>
+
+
+    <!-- ================= ARTICLE DATA ================= -->
+
+    <script>
+
+        const articles = {
+
+            1: {
+                category: "Technology",
+                image: "images/latest-technology.jpeg",
+                date: "September 2026",
+                time: "5 min read",
+                title: "How Smart Technology Is Changing Everyday Life",
+
+                intro: `Smart technology is becoming an important part
+                of everyday life. From smart homes and mobile
+                applications to intelligent devices, technology
+                is changing the way people communicate, work,
+                learn, and manage daily activities.`,
+
+                sections: [
+                    {
+                        title: "Technology in Everyday Life",
+
+                        text: `Intelligent technology is not limited to homes.
+                        It is also being used in healthcare, education,
+                        transportation, communication, and business.
+
+                        Smart applications can help students learn,
+                        assist doctors in analyzing information,
+                        improve transportation systems, and help
+                        businesses make data-driven decisions.`
+                    },
+
+                    {
+                        title: "The Future Technology",
+
+                        text: `The future of technology is moving toward
+                        systems that can understand users needs and
+                        respond more intelligently.
+
+                        As AI, the Internet of Things (IoT), and
+                        automation continue to develop, connected
+                        devices are likely to become even more common.
+
+                        The goal of intelligent technology is not simply
+                        to create more devices, but to make technology
+                        more useful, efficient, and connected to
+                        everyday life.`
+                    }
+                ]
+            },
+
+
+            2: {
+                category: "Design",
+                image: "images/latest-design.jpeg",
+                date: "September 2026",
+                time: "5 min read",
+                title: "The Art of Creating Simple Digital Experiences",
+
+                intro: `Good digital design is more than attractive
+                colors and beautiful layouts. It focuses on
+                creating experiences that are clear, useful,
+                accessible, and easy for people to understand.`,
+
+                sections: [
+                    {
+                        title: "Modern Design Trends",
+
+                        text: `Digital design continues to evolve with
+                        technology. Minimal layouts, responsive
+                        designs, animations, interactive elements,
+                        and accessible interfaces are increasingly
+                        common.
+
+                        However, following trends should not come
+                        at the cost of usability. A design should
+                        remain useful and understandable even when
+                        visual trends change.`
+                    },
+
+                    {
+                        title: "The Future of Design",
+
+                        text: `As technology develops, designers are
+                        working with new tools such as artificial
+                        intelligence, 3D design, augmented reality,
+                        and interactive interfaces.
+
+                        These technologies are creating new
+                        opportunities for designers to experiment
+                        with creativity while developing more
+                        personalized and engaging digital experiences.`
+                    }
+                ]
+            },
+
+
+            3: {
+                category: "Career",
+                image: "images/latest-career.jpeg",
+                date: "September 2026",
+                time: "6 min read",
+                title: "Building a Career in the Digital Age",
+
+                intro: `The digital world is creating new opportunities
+                across many fields. Developing useful skills,
+                gaining practical experience, and continuing to
+                learn can help students prepare for changing
+                career environments.`,
+
+                sections: [
+                    {
+                        title: "Networking and Career Opportunities",
+
+                        text: `Networking can help people discover
+                        opportunities, learn from experienced
+                        professionals, and build meaningful
+                        connections.
+
+                        Attending workshops, seminars, career events,
+                        and online professional communities can
+                        provide opportunities to meet people working
+                        in different industries.`
+                    },
+
+                    {
+                        title: "Developing Valuable Skills",
+
+                        text: `Skills play an important role in career
+                        development. Technical skills can be useful
+                        in fields such as information technology,
+                        design, data, and digital marketing, while
+                        communication, teamwork, problem-solving,
+                        and time management are valuable in almost
+                        every profession.
+
+                        Learning continuously can help professionals
+                        stay prepared as industries and technologies
+                        change.`
+                    }
+                ]
+            }
+
+        };
+
+
+        /* ================= GET ARTICLE ID ================= */
+
+        const urlParams = new URLSearchParams(window.location.search);
+
+        const articleId = urlParams.get("id");
+
+        const article = articles[articleId];
+
+        const container = document.getElementById("articleContainer");
+
+
+        /* ================= SHOW ARTICLE ================= */
+
+        if (article) {
+
+            document.title = article.title + " | InkVerse";
+
+            let sectionsHTML = "";
+
+            article.sections.forEach(section => {
+
+                sectionsHTML += `
+                    <section class="latest-single-section">
+
+                        <h2>${section.title}</h2>
+
+                        <p>${section.text}</p>
+
+                    </section>
+                `;
+
+            });
+
+
+            container.innerHTML = `
+
+                <div class="latest-single-image">
+
+                    <img src="${article.image}"
+                         alt="${article.title}">
+
+                    <span class="latest-single-category">
+                        ${article.category}
+                    </span>
+
+                </div>
+
+
+                <div class="latest-single-content">
+
+                    <div class="latest-single-meta">
+
+                        <span>
+                            <i class="fa-regular fa-calendar"></i>
+                            ${article.date}
+                        </span>
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            ${article.time}
+                        </span>
+
+                    </div>
+
+
+                    <h1>
+                        ${article.title}
+                    </h1>
+
+
+                    <p class="latest-single-intro">
+                        ${article.intro}
+                    </p>
+
+
+                    ${sectionsHTML}
+
+
+                    <a href="latest-articles.html"
+                       class="latest-back-button">
+
+                        <i class="fa-solid fa-arrow-left"></i>
+
+                        Back to Latest Articles
+
+                    </a>
+
+                </div>
+
+            `;
+
+        } else {
+
+            container.innerHTML = `
+
+                <div class="article-not-found">
+
+                    <h1>Article Not Found</h1>
+
+                    <p>
+                        The article you are looking for does not exist.
+                    </p>
+
+                    <a href="latest-articles.html">
+                        Back to Latest Articles
+                    </a>
+
+                </div>
+
+            `;
+
+        }
+
+    </script>
+
+</body>
+</html>
